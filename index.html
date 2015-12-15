@@ -17,8 +17,11 @@
   <script type="text/javascript" src="./js/controllers/usersController.js"></script>
   <script type="text/javascript" src="./js/controllers/powersController.js"></script>
   <script type="text/javascript" src="./js/controllers/recipientsController.js"></script>
+
   <script type="text/javascript" src="./js/models/recipient.js"></script>
   <script type="text/javascript" src="./js/models/power.js"></script>
+  <script type="text/javascript" src="./js/models/category.js"></script>
+
 
 
   <!-- Style -->
@@ -79,6 +82,8 @@
 
 <!-- main / powers controller -->
 
+<!-- need to add ng-repeat to go over each button-->
+
  <main ng-controller="PowersController as power">
   <div class="homegrid">
     <div class="container">
@@ -86,7 +91,7 @@
         <div class="four columns">
           <div class="u-max-full-width" src="">
             <a class="button button-primary" href="#">Happy</a>
-            <a class="button button-primary" href="#">Lonely</a>
+            <a class="button button-primary" href="#">Beauty</a>
             <a class="button button-primary" href="#">Wisdom</a>
           </div>
           <div class="four columns">
@@ -129,12 +134,15 @@
   <div ng-controller="PowersController as power">
     <form>   
         <div class="power">
-          {{ power.power.text}} 
 
-          </br>
+          {{ power.power.text }} 
 
-          {{ power.power.citation}} 
+          <br>
 
+          {{ power.power.citation }} 
+  
+
+         
         </div>
         <input class="button-primary" type="submit" value="Next!">
       <input class="button-primary" type="submit" value="Send">

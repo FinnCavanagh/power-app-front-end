@@ -5,29 +5,35 @@ angular
     console.log("this is the 1st powers controller")
 
 
-PowersController.$inject = ['$resource', 'Power']
-function PowersController($resource, Power){
+PowersController.$inject = ['$resource', 'Power', 'Category']
+function PowersController($resource, Power, Category){
   var self = this;
+  
 
 
-  // var Power = $resource('http://localhost:3000/api/powers', { id: '@_id'}, { 
-  //   'random': { method:'GET', url: 'http://localhost:3000/api/powers/random/:tag' }
-  // });
+Category.query(function(res) {
+  console.log(categories)
+  //grabbing categories and pushing them into an array
+  self.categories = []; 
+  
+  //next, i need to set up 9 categories and pull random data into them
+  self.selectPower = {res} 
 
-  this.power = Power.random({ tag: 'happy' });
+  //i need to them store these into something i can use in ng-repeat
 
-  console.log("this is the 2nd powers controller")
 
-  // Fetch all powers
-  this.powers = Power.query();
+  });
 
-  // Fetch the clicked todo
-  this.selectPower = function(power) {
-    self.selectedPower = Power.get({ id: power._id });
+
+  console.log("this is the 2nd check powers controller")
+
+  // Fetch the clicked power
+  this.selectPower = function(category) {
+    self.selectedPower = Power.random({ tag: category });
   }
 
-  this.editCharacter = function(power){
-      self.power = power;
+  this.editPower = function(power){
+    self.power = power;
   }
 
 }

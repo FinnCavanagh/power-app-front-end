@@ -13,6 +13,7 @@ function RecipientsController(Recipient){
      this.recipient = {};
 
     this.save = function(){
+      console.log(Recipient);
      Recipient.save(this.recipient, function(res){
       console.log(res);
      })
