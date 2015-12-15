@@ -11,16 +11,18 @@ function PowersController($resource, Power, Category){
   
 
 
-Category.query(function(res) {
-  console.log(categories)
+Category.query(function(response) {
+  console.log("response.categories", response.categories)
+  var categories = response.categories;
   //grabbing categories and pushing them into an array
-  self.categories = []; 
-  
+  self.categories = _.shuffle(response.categories)
+  self.categories = _.sample(self.categories, [9])
+  console.log("self.categories", self.categories)
+
   //next, i need to set up 9 categories and pull random data into them
-  self.selectPower = {res} 
+  
 
   //i need to them store these into something i can use in ng-repeat
-
 
   });
 

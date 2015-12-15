@@ -7,6 +7,7 @@
   <script src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
   <script type="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></script>
+  <script src="http://underscorejs.org/underscore.js"></script>
 
 
   <!-- Internal JS Resources -->
@@ -85,24 +86,25 @@
 <!-- need to add ng-repeat to go over each button-->
 
  <main ng-controller="PowersController as power">
+ <!-- <div ng-repeat="categories in powers.all"> -->
   <div class="homegrid">
     <div class="container">
       <div class="row">
         <div class="four columns">
           <div class="u-max-full-width" src="">
-            <a class="button button-primary" href="#">Happy</a>
-            <a class="button button-primary" href="#">Beauty</a>
-            <a class="button button-primary" href="#">Wisdom</a>
+            <a class="button button-primary" href="#">{{ power.categories[0].name }}</a>
+            <a class="button button-primary" href="#">{{ power.categories[1].name }}</a>
+            <a class="button button-primary" href="#">{{ power.categories[2].name }}</a>
           </div>
           <div class="four columns">
-            <a class="button button-primary" href="#">Good</a>
-            <a class="button button-primary" href="#">Power</a>
-            <a class="button button-primary" href="#">Hungry</a>
+            <a class="button button-primary" href="#">{{ power.categories[3].name }}</a>
+            <a class="button button-primary" href="#">{{ power.categories[4].name }}</a>
+            <a class="button button-primary" href="#">{{ power.categories[5].name }}</a>
           </div>
           <div class="four columns">
-            <a class="button button-primary" href="#">Joy</a>
-            <a class="button button-primary" href="#">Lust</a>
-            <a class="button button-primary" href="#">Humor</a>
+            <a class="button button-primary" href="#">{{ power.categories[6].name }}</a>
+            <a class="button button-primary" href="#">{{ power.categories[7].name }}</a>
+            <a class="button button-primary" href="#">{{ power.categories[8].name }}</a>
           </div> 
       </div>
       </div>
