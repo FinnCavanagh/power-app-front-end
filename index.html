@@ -17,11 +17,15 @@
   <script type="text/javascript" src="./js/controllers/usersController.js"></script>
   <script type="text/javascript" src="./js/controllers/mainController.js"></script>
   <script type="text/javascript" src="./js/controllers/recipientsController.js"></script>
+  <script type="text/javascript" src="./js/models/recipient.js"></script>
+  <script type="text/javascript" src="./js/models/user.js"></script>
 
   <!-- Style -->
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 
 <body>
+
+<!-- users controller for log in -->
 
 <div ng-controller="usersController as users">
 
@@ -29,7 +33,6 @@
     <ul>
       <li><a href="#authorize">Log In</a></li>
       <li><a href="#join">Join</a></li>
-      <li><a ng-click="users.getUsers()">Users</a></li>
       <li><a ng-click="users.disappear()">Log Out</a></li>
     </ul>
   </nav>
@@ -73,50 +76,50 @@
 
 </div>
 
+<!-- main / powers controller -->
+
  <main ng-controller="MainController as main">
 
-<div class="homegrid">
-  <div class="container">
-    <div class="row">
-    <div class="four columns">
-    <div class="u-max-full-width" src="">
-    <a class="button button-primary" href="#">Happy</a>
-    <a class="button button-primary" href="#">Missing</a>
-    <a class="button button-primary" href="#">Excited</a>
-    </div>
-    <div class="four columns">
-    <a class="button button-primary" href="#">Good</a>
-    <a class="button button-primary" href="#">Power</a>
-    <a class="button button-primary" href="#">Hungry</a>
-    </div>
+  <div class="homegrid">
+    <div class="container">
+      <div class="row">
       <div class="four columns">
-      <a class="button button-primary" href="#">Joy</a>
-      <a class="button button-primary" href="#">Lust</a>
-      <a class="button button-primary" href="#">Humor</a>
-      </div> 
+      <div class="u-max-full-width" src="">
+      <a class="button button-primary" href="#">Happy</a>
+      <a class="button button-primary" href="#">Missing</a>
+      <a class="button button-primary" href="#">Excited</a>
+      </div>
+      <div class="four columns">
+      <a class="button button-primary" href="#">Good</a>
+      <a class="button button-primary" href="#">Power</a>
+      <a class="button button-primary" href="#">Hungry</a>
+      </div>
+        <div class="four columns">
+        <a class="button button-primary" href="#">Joy</a>
+        <a class="button button-primary" href="#">Lust</a>
+        <a class="button button-primary" href="#">Humor</a>
+        </div> 
+        </div>
       </div>
     </div>
-  </div>
-</div>  
+  </div>  
 
   </main>
 </body>
 
 <!-- recipients controller -->
 
-<main ng-controller="RecipientsController as recipients">
+<div ng-controller="RecipientsController as recipients">
 
-<form  ng-submit="recipients.selectRecipient(recipient)" id="newRecipient">
-<h2 ng-show="recipients.selectedRecipient">{{ recipients.selectedRecipient.name }}</h2>
-     <div>
-       <label for="newRecipient-name">Name:</label>
-       <input type="text" id="newRecipient-name" ng-model="recipients.selectRecipient.name" placeholder="Bob">
-     </div>
-     <div>
-       <input type="submit" value="Add Recipient">
-       <h2 ng-class="main.recipient.name"> {{ main.recipient.name }}</h2>
-     </div>
-  </form>
+
+<form ng-submit="recipients.save()">
+  <label for="recipient[name]">Name</label>
+  <input type="text" name="recipient[name]" placeholder="NAME?" ng-model="recipients.recipient.name">
+
+  <h2 ng-class="recipients.recipient.name"> {{ recipients.recipient.name}}</h2>
+</form>
+
+</div>
 
 
 </html>
