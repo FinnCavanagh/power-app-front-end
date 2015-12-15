@@ -16,9 +16,14 @@
   <script type="text/javascript" src="./js/services/authInterceptor.js"></script>
   <script type="text/javascript" src="./js/controllers/usersController.js"></script>
   <script type="text/javascript" src="./js/controllers/mainController.js"></script>
+  <script type="text/javascript" src="./js/controllers/recipientsController.js"></script>
 
   <!-- Style -->
   <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+<body>
+
+<div ng-controller="usersController as users">
 
   <nav>
     <ul>
@@ -30,13 +35,45 @@
   </nav>
 
 
-<!-- <p>{{main.power.tags}}</p> -->
-<!-- <p>{{main.power.text}}</p>
-<p>{{main.power.citation}}</p>
- -->
-<body>
-  <main ng-controller="MainController as main">
+ <section>
+   <h3>Login</h3>
+   <form id="authorize" ng-submit="users.authorize()">
+     <label for="name">Name</label>
+     <input type="text" name="name" placeholder="name" ng-model="users.user.username">
 
+     <label for="name">Email</label>
+     <input type="text" name="name" placeholder="What is your email?" ng-model="users.user.email">
+
+     <label for="password">Password</label>
+     <input type="password" name="password" placeholder="What is your password?" ng-model="users.user.password">
+
+     <input type="submit" value="Access">
+   </form>
+ </section>
+
+
+ <section>
+   <h3>Join</h3>
+   <form id="join" ng-submit="users.join()">
+     <label for="name">Name</label>
+     <input type="text" name="name" placeholder="name" ng-model="users.user.username">
+
+     <label for="email">email</label>
+     <input type="text" name="email" placeholder="What's your email?" ng-model="users.user.email">
+
+     <label>Profile Picture</label>
+     <input type="text" name="image" placeholder="Got a photo?" ng-model="users.user.image">
+
+     <label for="password">Password</label>
+     <input type="password" name="password" placeholder="Password" ng-model="users.user.password">
+
+     <input type="submit" value="Access">
+   </form>
+ </section>
+
+</div>
+
+ <main ng-controller="MainController as main">
 
 <div class="homegrid">
   <div class="container">
@@ -67,27 +104,19 @@
 
 <!-- recipients controller -->
 
-<main ng-controller="RecipientsController as recipient">
-<form ng-submit="recipients.addRecipient()" id="newRecipient">
+<main ng-controller="RecipientsController as recipients">
+
+<form  ng-submit="recipients.selectRecipient(recipient)" id="newRecipient">
+<h2 ng-show="recipients.selectedRecipient">{{ recipients.selectedRecipient.name }}</h2>
      <div>
        <label for="newRecipient-name">Name:</label>
-       <input type="text" id="newRecipient-name" ng-model="recipients.newRecipient.name" placeholder="Bob">
+       <input type="text" id="newRecipient-name" ng-model="recipients.selectRecipient.name" placeholder="Bob">
      </div>
      <div>
        <input type="submit" value="Add Recipient">
+       <h2 ng-class="main.recipient.name"> {{ main.recipient.name }}</h2>
      </div>
-   </form>
-
-
-<!-- 
-<form>
-  <label for="recipient[name]"> Who Are You Sending Power To?</label>
-  <input type="text" name="recipient[name]" placeholder="Dave? Sue? Marie?" ng-model="main.recipient.name">
-  <form ng-submit="main.add()">
-  <input type="submit" value="Add">
-</form>
-
-<h2 ng-class="main.recipient.name"> {{ main.recipient.name }}</h2> -->
+  </form>
 
 
 </html>
