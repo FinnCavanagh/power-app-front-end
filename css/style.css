@@ -1,7 +1,22 @@
  * {
   margin: 0 auto;
-  
+}
 
+
+.power {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  color: #1A167D;
+}
+
+
+.send {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  color: #1A167D;
+  width: 100%;
 }
 
 .main {
@@ -29,8 +44,6 @@
 
 .recipient {
   font-size: 50px;
-
-
 }
 
 body {
@@ -57,14 +70,7 @@ ul {
   padding: 0;
 }
 
-h1 {
-  font-size: 110px;
-  font-weight: 400;
-  letter-spacing: -4px;
-  color: #1A167D;
-}
-
-h2 {
+/*h2 {
   font-size: 30px;
   font-weight: 300;
   color: #EEE;
@@ -76,8 +82,7 @@ h3 {
   font-size: px;
   font-weight: 400;
   color: #333;
-
-}
+}*/
 
 header ul, li {
   display: inline-block;
@@ -134,6 +139,6 @@ form {
   max-width: 300px;
 }
 
-label {
+/*label {
   line-height: 2.5;
-}
+}*/
