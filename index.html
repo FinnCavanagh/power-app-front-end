@@ -123,25 +123,35 @@
         </form>
       </div>
 
+      
 
 
 <!-- below is the powers message to be edited and sent -->
 <!-- main / powers controller --> 
       <div class="power">
       <h2  ng-model="recipients.recipient.name" ng-show="recipients.recipient.name"> {{ recipients.recipient.name}} </h2>
+      <form> 
+        <textarea id="TextArea" ng-model="power.power.text" ng-keyup="autoExpand($event)" placeholder="Your power will appear here, edit it as you wish...."></textarea>
 
-        <textarea id="TextArea" ng-model="power.selectedPower.text" ng-keyup="autoExpand($event)" placeholder="Your power will appear here, edit it as you wish....">
+        <input type="text" placeholder="Include who it's from?" ng-model="power.power.citation">
+        <input type="text" name="phone_number" placeholder="Recipient ?" ng-model="power.power.phone_number">
+              
+        <input class="button-primary" type="submit" ng-click="reset()" value="Next!">
+        <input class="button-primary" type="submit" ng-click="power.savePowers()" value="Send">
 
-        <input type="text" placeholder="Include who it's from?" ng-model="power.selectedPower.citation ">
-        </textarea>
-      
-          <form>       
-
-            <input class="button-primary" type="submit" ng-click="reset()" value="Next!">
-            <input class="button-primary" type="submit" ng-click= "submit()" value="Send">
-
-          </form>
+      </form>
    
+    <!-- below is the form which grabs the recipient phone number -->
+    
+    <h3>Send Power</h3>
+    <form id="phone_number" ng-submit="power.savePowers()">
+      <label for="phone_number">Phone Number: </label>
+      
+       
+      <input class="button-primary" type="submit" ng-click="power.savePowers()" value="Send">
+    
+    </form>
+
       </div>
     </div>
   </main>
