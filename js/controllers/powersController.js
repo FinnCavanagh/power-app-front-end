@@ -11,7 +11,6 @@ function PowersController($resource, Power, Category, $http){
   
   self.selectedPower = {};
 
-
   self.power = {};
 
   Category.query(function(response) {
@@ -40,24 +39,18 @@ function PowersController($resource, Power, Category, $http){
   }
 
 
-  // this.savePowers = function(response) {
-  //   console.log("hi")
-  //   self.selectedPower = Power.save({ power: text })
-  //     console.log("stick"); 
-  //   }
-      
- 
+  this.savePowers = function(){
+   var data = self.power
+  
+    $http
+      .post('http://localhost:3000/api/powers/send-sms', data)
+      .then(function(response){
+        this.all = response.text.powers;
+    });
+  }
+}
 
-   this.savePowers = function(){
-    var data = this.freshPower
-    debugger
-     $http
-       .post('http://localhost:3000/api/powers/send-sms', data)
-       .then(function(response){
-         this.all = response.text.powers;
-     });
-   }
- 
+
 
 //   this.getPowers = function(response) {
 //     console.log(power)
@@ -99,5 +92,5 @@ function PowersController($resource, Power, Category, $http){
   // reset()
   // // on click it will go to the next power
 
-}
+
 
