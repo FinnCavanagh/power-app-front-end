@@ -1,6 +1,8 @@
  angular
   .module('power')
-  .controller('usersController', UserController)
+  .controller('usersController', UserController);
+
+
 
 UserController.$inject = ['User', 'TokenService']
 function UserController(User, TokenService) {

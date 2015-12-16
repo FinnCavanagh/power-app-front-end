@@ -23,8 +23,6 @@ function PowersController($resource, Power, Category){
   //when the category is clicked, it returns the powers with those tags
 
 
-
-
   this.selectPower = function(category) {
     self.selectedPower = Power.random({ tag: category });
   }
@@ -34,6 +32,14 @@ function PowersController($resource, Power, Category){
   this.editPower = function(power){
     self.power = power;
   }
+
+  // submit()
+  // .save 
+  // on ng click the text will be saved 
+  // sent to mode mailer
+
+  // reset()
+  // // on click it will go to the next power
 
 }
 
