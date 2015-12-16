@@ -9,30 +9,27 @@ PowersController.$inject = ['$resource', 'Power', 'Category']
 function PowersController($resource, Power, Category){
   var self = this;
   
+  self.selectedPower = {};
 
-
-Category.query(function(response) {
-  console.log("response.categories", response.categories)
-  var categories = response.categories;
-  //grabbing categories and pushing them into an array
-  self.categories = _.shuffle(response.categories)
-  self.categories = _.sample(self.categories, [9])
-  console.log("self.categories", self.categories)
-
-  //next, i need to set up 9 categories and pull random data into them
-  
-
-  //i need to them store these into something i can use in ng-repeat
-
+  Category.query(function(response) {
+    console.log("response.categories", response.categories)
+    self.categories = _.sample(_.shuffle(response.categories), [9]);
   });
 
 
-  console.log("this is the 2nd check powers controller")
+  console.log("this is the categories check")
 
-  // Fetch the clicked power
+  // Fetch the clicked category
+  //when the category is clicked, it returns the powers with those tags
+
+
+
+
   this.selectPower = function(category) {
     self.selectedPower = Power.random({ tag: category });
   }
+
+  // _.contains(list, value, [fromIndex]) 
 
   this.editPower = function(power){
     self.power = power;

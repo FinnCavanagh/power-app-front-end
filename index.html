@@ -85,14 +85,14 @@
 
 <!-- need to add ng-repeat to go over each button-->
 
- <main ng-controller="PowersController as power">
+<main ng-controller="PowersController as power">
  <!-- <div ng-repeat="categories in powers.all"> -->
   <div class="homegrid">
     <div class="container">
       <div class="row">
         <div class="four columns">
           <div class="u-max-full-width" src="">
-            <a class="button button-primary" href="#">{{ power.categories[0].name }}</a>
+            <a class="button button-primary" ng-click="power.selectPower(power.categories[0].name)">{{ power.categories[0].name }}</a>
             <a class="button button-primary" href="#">{{ power.categories[1].name }}</a>
             <a class="button button-primary" href="#">{{ power.categories[2].name }}</a>
           </div>
@@ -109,45 +109,33 @@
       </div>
       </div>
     </div>
-  </div>  
+  </div>
+
+<!-- recipients controller -->
+
+  <div ng-controller="RecipientsController as recipients">
+    <div class="send">
+      <form ng-submit="recipients.save()">
+        <label for="recipient[name]">Send Power To:</label>
+        <input class="u-full-width" input type="text" name="recipient[name]" placeholder="Dave? Bob?..." ng-model="recipients.recipient.name"> 
+        <div class= "send" ng-class="recipients.recipient.name"> {{ recipients.recipient.name}} </div>
+      </form>
+    </div>
+
+
+  <!-- main / powers controller --> 
+      <form>
+          <div class="power">
+          <!-- make this a form and link to the content using ng-model -->
+            {{ power.selectedPower.text }} 
+            <br>
+            {{ power.selectedPower.citation }} 
+          </div>
+          <h2 ng-show="recipients.recipient.name"> {{ recipients.recipient.name}} </h2>
+          <input class="button-primary" type="submit" value="Next!">
+        <input class="button-primary" type="submit" value="Send">
+      </form>
+    </div>
   </main>
 </body>
-
-<!-- recipients controller -->
-
-<div ng-controller="RecipientsController as recipients">
-  <div class="send">
-    <form ng-submit="recipients.save()">
-      <label for="recipient[name]">Send Power To:</label>
-      <input class="u-full-width" input type="text" name="recipient[name]" placeholder="Dave? Bob?..." ng-model="recipients.recipient.name"> 
-      <div class= "send" ng-class="recipients.recipient.name"> {{ recipients.recipient.name}} </div>
-    </form>
-  </div>
-</div>
-
-
-<!-- recipients controller -->
-
-<div ng-controller="RecipientsController as recipients">
-<h2 ng-show="recipients.recipient.name"> {{ recipients.recipient.name}} </h2>
-
-
-<!-- main / powers controller --> 
-  <div ng-controller="PowersController as power">
-    <form>   
-        <div class="power">
-
-          {{ power.power.text }} 
-
-          <br>
-
-          {{ power.power.citation }} 
-  
-
-         
-        </div>
-        <input class="button-primary" type="submit" value="Next!">
-      <input class="button-primary" type="submit" value="Send">
-    </form>
-  </div>
 </html>
