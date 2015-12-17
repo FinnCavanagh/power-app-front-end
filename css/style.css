@@ -40,8 +40,7 @@ input[type=submit]:hover {
 }
 
 .main {
-  background-image: url(http://zanaproducts.co.za/wp-content/uploads/downloads/2014/04/squiggles_desktop_mintblk.jpg);
-  background-size: cover;
+
 }
 
 .homegrid {
@@ -66,6 +65,7 @@ textarea {
   outline: none;
   font-size: 45px;
   text-align: justify;
+  font-family:'Ubuntu', Helvetica, Arial, sans-serif;
   
 
 }
@@ -75,7 +75,7 @@ textarea {
   color:#999;
   font-weight:400;
   font-size:30px;
-  font-family:'Ubuntu', Helvetica, Arial, sans-serif;
+
   width:100%;
   background:#fff;
   border-radius:3px;
@@ -206,8 +206,18 @@ ul {
   padding: 0;
 }
 
+
+.welcome {
+  margin-top: 80px;
+  font-size: 110px;
+  font-weight: 500;
+  color: #fff;
+  background-image: url(http://zanaproducts.co.za/wp-content/uploads/downloads/2014/04/squiggles_desktop_mintblk.jpg);
+  background-size: cover;
+}
+
 h2 {
-  margin-top: 
+  margin-top: 10px;
   font-size: 30px;
   font-weight: 300;
   color: #2D882D;
