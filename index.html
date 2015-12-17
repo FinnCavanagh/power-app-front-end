@@ -23,13 +23,25 @@
   <script type="text/javascript" src="./js/models/power.js"></script>
   <script type="text/javascript" src="./js/models/category.js"></script>
 
-
   <!-- Style -->
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 
 </head>
-
 <body>
+
+
+<div ng-controller="usersController as users">
+
+  <a href="#authorize" ng-click="showme=true">Log In</a>
+  <button ng-click="showme=false">Log out</button> 
+  
+  <div class="wrapper">
+    <p ng-hide="showme">It will appear here!</p>
+    <h2 ng-show="showme">This is mah content, yo!</h2>
+  </div>
+  
+</div>    
+
 
 <!-- users controller for log in -->
 
@@ -122,7 +134,6 @@
           <div class= "send" ng-class="recipients.recipient.name"> {{ recipients.recipient.name}} </div>
         </form>
       </div>
-
       
 
 
