@@ -2,12 +2,11 @@
   margin: 0 auto;
 }
 
-
 .power {
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 0px;
-  color: #1A167D;
+  background-color: rgba(45, 136, 45, 0.5);
 }
 
 
@@ -25,8 +24,9 @@
 }
 
 .homegrid {
+  padding-top: 120px;
+  height: 100vh;
   font-size: 60px;
-  
 }
 
 .button.button-primary {
@@ -36,7 +36,6 @@
 }
 
 
-}
 textarea {
   height:auto;
   max-width:600px;
@@ -59,10 +58,27 @@ textarea {
 }
 
 
+.content-wrapper  {
+ width: 100vw;
+ height: 900px;
+ text-align: center;
+ color: #fff; 
+}
+
+.screen {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
 .u-max-full-width {
     border: 5px;
 /*    padding: 8rem 0 7rem;*/
     
+}
+
+.recipients-box {
+ border: 3px solid #1A167D;;
 }
 
 .recipient {
@@ -93,10 +109,10 @@ ul {
   padding: 0;
 }
 
-/*h2 {
+h2 {
   font-size: 30px;
   font-weight: 300;
-  color: #EEE;
+  color: #2D882D;
   margin-top: -20px;
 }
 
@@ -105,7 +121,7 @@ h3 {
   font-size: px;
   font-weight: 400;
   color: #333;
-}*/
+}
 
 header ul, li {
   display: inline-block;
@@ -115,9 +131,6 @@ header ul, li {
   margin: 10px;
 }
 
-main li {
-  display: block;
-}
 
 a {
   font-weight: 500;
@@ -144,6 +157,7 @@ input {
   margin-bottom: 8px;
 }
 
+
 input[type=submit] {
   margin-top: 20px;
   border: 1px solid #333;
@@ -165,3 +179,9 @@ form {
 /*label {
   line-height: 2.5;
 }*/
+
+@media only screen and (max-width: 947px) {
+  .homegrid {
+    height: 100%;
+  }
+}

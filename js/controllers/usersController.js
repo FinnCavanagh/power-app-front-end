@@ -40,8 +40,6 @@ function UserController(User, TokenService) {
       TokenService.removeToken();
       self.all  = [];
       self.user = {};
-
-      $('#authorize').hide();
     }
 
     self.getUsers = function() {

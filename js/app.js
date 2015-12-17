@@ -1,7 +1,8 @@
 angular
   .module('power', ['angular-jwt', 'ngResource'])
-  .constant('API', 'http://localhost:3000/api')
+  .constant('API', 'http://send-power.herokuapp.com/api')
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
   });
+
 
