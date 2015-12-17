@@ -5,4 +5,3 @@ angular
     $httpProvider.interceptors.push('AuthInterceptor');
   });
 
-

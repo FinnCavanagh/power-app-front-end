@@ -2,12 +2,25 @@
   margin: 0 auto;
 }
 
-/*.centered {
-  position: absolute;
-     left: 50%;
-     top: 50%;
-     transform: translate(-50%,-50%); 
-}*/
+p {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+input[type=submit] {
+  margin-top: 20px;
+  border: 1px solid #333;
+  background: #2D882D;
+  font-size: 15px;
+  color: #FFF;
+}
+
+input[type=submit]:hover {
+  background: #55AA55;
+  transition: background 2s;
+}
+
 
 .power {
   background: -webkit-linear-gradient(#64B058, #3C8D2F);
@@ -46,16 +59,16 @@
 
 textarea {
   margin: 0 auto;
-  width: 100%;
+  width: 80%;
   background: none;
   border: none;
   color: #fff;
   outline: none;
-  font-size: 50px;
+  font-size: 45px;
   text-align: justify;
+  
 
-
-
+}
 
 /*  height:auto;
   max-width:600px;
@@ -75,7 +88,6 @@ textarea {
   -ms-transition: height 2s ease;
   -o-transition: height 2s ease;
   transition: height 2s ease;*/
-}
 
 
 /*::-webkit-input-placeholder {
@@ -116,10 +128,36 @@ textarea {
   border: 0;
   background: none;
   color: #fff;
-
   font-size: 125px;
 }
+
+.recipient-wrapper input[type=text] {
+  text-align: center;
+  margin: 0 auto;
+  height: 50px;
+  width: 300px;
+  border: 0;
+  background: none;
+  background-color: #fff;
+  font-size: 25px;
+  margin: 15px;
+  border-radius: 15px;
 }
+
+@-webkit-keyframes blink-it {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .screen {
   display: table-cell;
@@ -217,27 +255,21 @@ input {
   margin-bottom: 8px;
 }
 
-
-input[type=submit] {
-  margin-top: 20px;
-  border: 1px solid #333;
-  background: #2D882D;
-  font-size: 15px;
-  color: #FFF;
-}
-
-input[type=submit]:hover {
-  background: #55AA55;
-  transition: background 2s;
+#sendbutton{
+  border-radius: 15px;
+  border-style: dotted;
+  background-color: pink;
+  width: 300px; 
+  margin-bottom: 8px;
+  height: 50px;
+  font-size: 35px;
+  }
 }
 
 form {
   padding: 60px;
 }
 
-/*label {
-  line-height: 2.5;
-  }*/
 
   @media only screen and (max-width: 947px) {
     .homegrid {

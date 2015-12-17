@@ -24,6 +24,7 @@
   <script type="text/javascript" src="./js/models/power.js"></script>
   <script type="text/javascript" src="./js/models/category.js"></script>
 
+
   <!-- Style -->
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 
@@ -123,16 +124,21 @@
         <div class="power">
           <h2  ng-model="recipients.recipient.name" ng-show="recipients.recipient.name"> {{ recipients.recipient.name}} </h2>
           <form ng-submit="scrollDown()"> 
-            <textarea id="TextArea" rows="10" cols="50" ng-model="power.power.text" ng-keyup="autoExpand($event)" placeholder="Your power will appear here, edit it as you wish...."></textarea>
+            <textarea id="TextArea" rows="10" cols="50" wrap= 'hard' ng-model="power.power.text" ng-keyup="autoExpand($event)" placeholder="Your power will appear here, edit it as you wish...."></textarea>
           </form>
+    
         </div> 
 
 
         <div class="send-tile">
-            <input type="text" placeholder="Add your name or honour the writer? You choose" ng-model="power.power.citation"><br>
-            <input class="button-primary" type="submit" ng-click="tag.selectedPower()" value="Next!"><br>
+        <p> Reveal your identity or just who wrote it...? </p>
+        <div class="recipient-wrapper">
+            <input type="text" placeholder="from" {{power.power.citation}} "and..."  ng-model="power.power.citation"><br>
             <input type="text" name="phone_number" placeholder="what's their number? " ng-model="power.power.phone_number"><br>
-            <input class="button-primary" type="submit" ng-click="power.savePowers()" value="Send"><br>
+          </div>
+          <div="sendbutton">
+            <input class="sendbutton" id="sendbutton"type="submit" ng-click="power.savePowers()" value="Send It"><br>
+        </div>
         </div>
 
       </div>

@@ -29,18 +29,6 @@ function RecipientsController(Recipient){
   }
 
 
-function scrollDown() {
-  console.log('im in');
-  $('#txtSearchProdAssign').keypress(function (e) {
-   var key = e.which;
-   if(key == 13)  // the enter key code
-    {
-      $('input[name = butAssignProd]').click();
-      return false;  
-    }
-  });   
-}
-
   
 
   
