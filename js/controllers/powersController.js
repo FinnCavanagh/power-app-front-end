@@ -23,6 +23,7 @@ function PowersController($resource, Power, Category, $http){
 
   // Fetch the clicked category
   //when the category is clicked, it returns the powers with those tags
+
   this.selectPower = function(category) {
     // debugger
     var selectedPower = Power.random({ tag: category });
@@ -31,8 +32,14 @@ function PowersController($resource, Power, Category, $http){
         text: data.text,
         citation: data.citation
       }
+
+    $('html, body').animate({
+        scrollTop: $(".content-wrapper").offset().top
+    }, 1000);
    });
   }
+
+  
 
 
   this.editPower = function(power){
@@ -44,11 +51,23 @@ function PowersController($resource, Power, Category, $http){
    var data = self.power
   
     $http
-      .post('http://localhost:3000/api/powers/send-sms', data)
+      .post(API + '/powers/send-sms', data)
       .then(function(response){
         this.all = response.text.powers;
     });
   }
+}
+
+function scrollDown() {
+  console.log('im in');
+  $('#txtSearchProdAssign').keypress(function (e) {
+   var key = e.which;
+   if(key == 13)  // the enter key code
+    {
+      $('input[name = butAssignProd]').click();
+      return false;  
+    }
+  });   
 }
 
 

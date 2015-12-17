@@ -20,9 +20,26 @@ function RecipientsController(Recipient){
       console.log(res);
      })
 
+     $('html, body').animate({
+         scrollTop: $(".power").offset().top
+     }, 1000);
+
     };
 
   }
+
+
+function scrollDown() {
+  console.log('im in');
+  $('#txtSearchProdAssign').keypress(function (e) {
+   var key = e.which;
+   if(key == 13)  // the enter key code
+    {
+      $('input[name = butAssignProd]').click();
+      return false;  
+    }
+  });   
+}
 
   
 

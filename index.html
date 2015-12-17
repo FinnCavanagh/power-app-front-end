@@ -74,66 +74,69 @@
     <!-- need to add ng-repeat to go over each button-->
     <main ng-controller="PowersController as power" ng-if="users.isLoggedIn()">
      <!-- <div ng-repeat="categories in powers.all"> -->
-    <div class="content wrapper">
-     <div class="homegrid">
-      <div class="container">
-        <div class="row">
-          <div class="four columns">
-            <div class="u-max-full-width" src="">
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[0].name)">{{ power.categories[0].name }}</a>
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[1].name)">{{ power.categories[1].name }}</a>
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[2].name)">{{ power.categories[2].name }}</a>
-            </div>
+     <div class="content wrapper">
+       <div class="homegrid">
+        <div class="container">
+          <div class="row">
             <div class="four columns">
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[3].name)">{{ power.categories[3].name }}</a>
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[4].name)">{{ power.categories[4].name }}</a>
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[5].name)">{{ power.categories[5].name }}</a>
+              <div class="u-max-full-width" src="">
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[0].name)">{{ power.categories[0].name }}</a>
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[1].name)">{{ power.categories[1].name }}</a>
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[2].name)">{{ power.categories[2].name }}</a>
+              </div>
+              <div class="four columns">
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[3].name)">{{ power.categories[3].name }}</a>
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[4].name)">{{ power.categories[4].name }}</a>
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[5].name)">{{ power.categories[5].name }}</a>
+              </div>
+              <div class="four columns">
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[6].name)">{{ power.categories[6].name }}</a>
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[7].name)">{{ power.categories[7].name }}</a>
+                <a class="button button-primary" ng-click="power.selectPower(power.categories[8].name)">{{ power.categories[8].name }}</a>
+              </div> 
             </div>
-            <div class="four columns">
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[6].name)">{{ power.categories[6].name }}</a>
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[7].name)">{{ power.categories[7].name }}</a>
-              <a class="button button-primary" ng-click="power.selectPower(power.categories[8].name)">{{ power.categories[8].name }}</a>
-            </div> 
           </div>
+          <!-- <img ng-src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrkPRaBlhUsk5zuyfCGB_Q-kMhZYsRRJefWXRW-uNpx8tk_3DR8A{{arrow}}" alt="arrow"> -->
+
         </div>
       </div>
     </div>
-  </div>
-<!-- below is the recipient's name to be entered-->
-<!-- recipients controller -->
+    <!-- below is the recipient's name to be entered-->
+    <!-- recipients controller -->
 
-  <div ng-controller="RecipientsController as recipients">
-    <div class="recipients-box">
-
-    <div class="content wrapper">
-      <div class="screen-to-screen">
+    <div ng-controller="RecipientsController as recipients">
+      <div class="recipients-box">
+        <div class="content-wrapper">
           <form ng-submit="recipients.save()">
-            <h3>Send Power To:</h3>
-            <input class="u-full-width" input type="text" name="recipient[name]" placeholder="Dave? Bob?..." ng-model="recipients.recipient.name">
+            <div class="centered">
+              <h2>Send Power To:</h2>
+              <input type="text" name="recipient[name]" nmodel="recipients.recipient.name" autofocus>
+            </div>
           </form> 
 
           <div class= "send" ng-class="recipients.recipient.name"> {{ recipients.recipient.name}} </div>
+        </div>      
+
+        <!-- below is the powers message to be edited and sent -->
+        <!-- main / powers controller --> 
+
+        <div class="power">
+          <h2  ng-model="recipients.recipient.name" ng-show="recipients.recipient.name"> {{ recipients.recipient.name}} </h2>
+          <form ng-submit="scrollDown()"> 
+            <textarea id="TextArea" rows="10" cols="50" ng-model="power.power.text" ng-keyup="autoExpand($event)" placeholder="Your power will appear here, edit it as you wish...."></textarea>
+          </form>
         </div> 
-    </div>      
 
 
+        <div class="send-tile">
+            <input type="text" placeholder="Add your name or honour the writer? You choose" ng-model="power.power.citation"><br>
+            <input class="button-primary" type="submit" ng-click="tag.selectedPower()" value="Next!"><br>
+            <input type="text" name="phone_number" placeholder="what's their number? " ng-model="power.power.phone_number"><br>
+            <input class="button-primary" type="submit" ng-click="power.savePowers()" value="Send"><br>
+        </div>
 
-<!-- below is the powers message to be edited and sent -->
-<!-- main / powers controller --> 
-    <div class="power">
-      <h2  ng-model="recipients.recipient.name" ng-show="recipients.recipient.name"> {{ recipients.recipient.name}} </h2>
-        <form> 
-          <textarea id="TextArea" rows="10" cols="100" ng-model="power.power.text" ng-keyup="autoExpand($event)" placeholder="Your power will appear here, edit it as you wish...."></textarea>
-
-          <input type="text" placeholder="Add your name or honour the writer? You choose" ng-model="power.power.citation">
-          <input type="text" name="phone_number" placeholder="what's their number? " ng-model="power.power.phone_number">
-
-          <input class="button-primary" type="submit" ng-click="reset()" value="Next!">
-          <input class="button-primary" type="submit" ng-click="power.savePowers()" value="Send">
-        </form>
-      </div>  
-  </div>
-<!-- below is the form which grabs the recipient phone number -->
+      </div>
+      <!-- below is the form which grabs the recipient phone number -->
     </main>
   </div>
 </body>
