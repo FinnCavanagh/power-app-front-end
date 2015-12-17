@@ -24,6 +24,7 @@ function PowersController($resource, Power, Category, $http){
   // Fetch the clicked category
   //when the category is clicked, it returns the powers with those tags
   this.selectPower = function(category) {
+    // debugger
     var selectedPower = Power.random({ tag: category });
     selectedPower.$promise.then(function(data) {
       self.power = {

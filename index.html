@@ -11,6 +11,7 @@
 
 
   <!-- Internal JS Resources -->
+  <script type="text/javascript" src="./js/lib/jquery.js"></script>
   <script src="./js/app.js"></script>
   <script type="text/javascript" src="./js/services/tokenService.js"></script>
   <script type="text/javascript" src="./js/services/authInterceptor.js"></script>
@@ -29,23 +30,7 @@
 </head>
 <body>
 
-
-<div ng-controller="usersController as users">
-
-  <a href="#authorize" ng-click="showme=true">Log In</a>
-  <button ng-click="showme=false">Log out</button> 
-  
-  <div class="wrapper">
-    <p ng-hide="showme">It will appear here!</p>
-    <h2 ng-show="showme">This is mah content, yo!</h2>
-  </div>
-  
-</div>    
-
-
-<!-- users controller for log in -->
-
-<div ng-controller="usersController as users">
+<!-- <div ng-controller="usersController as users">
 
   <nav>
     <ul>
@@ -53,11 +38,30 @@
       <li><a href="#join">Join</a></li>
       <li><a ng-click="users.disappear()">Log Out</a></li>
     </ul>
-  </nav>
+  </nav> -->
 
+
+
+<div ng-controller="usersController as users">
+<!-- 
+  <a href="#authorize" ng-click="showme=true">Log In</a>
+  <li><a ng-click="showme=false">Log out</button> 
+  
+  <div class="wrapper">
+    <p ng-hide="showme">It will appear here!</p>
+    <h2 ng-show="showme">This is mah content, yo!</h2>
+  </div>
+  
+</div>     -->
+
+<!-- users controller for log in -->
 
  <section>
-   <h3>Login</h3>
+
+  <a href="#authorize" ng-click="showme=true">Log In</a>
+<!--   <li><a ng-click="users.disappear()">Log Out</a></li> -->
+  <div class="wrapper">
+  <h2 ng-show="showme">
    <form id="authorize" ng-submit="users.authorize()">
      <label for="name">Name</label>
      <input type="text" name="name" placeholder="name" ng-model="users.user.username">
@@ -67,14 +71,18 @@
 
      <label for="password">Password</label>
      <input type="password" name="password" placeholder="What is your password?" ng-model="users.user.password">
-
-     <input type="submit" value="Access">
+  
+     <li><a ng-click="users.disappear()" input type="submit" >Log In</a></li>
    </form>
+  </h2>
+   </div>
  </section>
 
-
+<!-- 
  <section>
-   <h3>Join</h3>
+  <a href="#authorize" ng-click="showme=true">Join</a>
+   <div class="wrapper">
+   <h2 ng-show="showme">
    <form id="join" ng-submit="users.join()">
      <label for="name">Name</label>
      <input type="text" name="name" placeholder="name" ng-model="users.user.username">
@@ -87,13 +95,13 @@
 
      <label for="password">Password</label>
      <input type="password" name="password" placeholder="Password" ng-model="users.user.password">
-
-     <input type="submit" value="Access">
+    
+    <li><a ng-click="users.disappear()" input type="submit" >Join</a></li>
    </form>
  </section>
 
 </div>
-
+ -->
 <!-- main / powers controller -->
 
 <!-- need to add ng-repeat to go over each button-->
