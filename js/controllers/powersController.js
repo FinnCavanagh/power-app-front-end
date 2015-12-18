@@ -5,8 +5,8 @@ angular
     console.log("this is the 1st powers controller")
 
 
-PowersController.$inject = ['$resource', 'Power', 'Category', '$http']
-function PowersController($resource, Power, Category, $http){
+PowersController.$inject = ['$resource', 'Power', 'Category', '$http', 'API']
+function PowersController($resource, Power, Category, $http, API){
   var self = this;
   
   self.selectedPower = {};
@@ -40,8 +40,6 @@ function PowersController($resource, Power, Category, $http){
   }
 
   
-
-
   this.editPower = function(power){
     self.power = power;
   }
@@ -53,10 +51,14 @@ function PowersController($resource, Power, Category, $http){
     $http
       .post(API + '/powers/send-sms', data)
       .then(function(response){
-        this.all = response.text.powers;
+        console.log('response:', response);
+        console.log('text:', response.config.data.text);
+        // this.all = response.power.powers;
+        // console.log(text);
     });
   }
 }
+
 
 function scrollDown() {
   console.log('im in');
@@ -68,8 +70,6 @@ function scrollDown() {
       return false;  
     }
   });   
-
-
 }
 
 
