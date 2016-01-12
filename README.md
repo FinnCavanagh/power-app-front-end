@@ -46,11 +46,10 @@ The landing page:
 
 ![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-splash.png)
 
-
 Example categories (these randomise):
 ![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-categories.png)
 
-Example SMS on iphone: 
+Example SMS on iPhone: 
 ![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/sms.png)
 
 
