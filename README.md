@@ -3,8 +3,8 @@
 ### Welcome to Power App
 
 
-["Loneliness as big a killer as obesity and as dangerous as heavy smoking"](http://www.nhs.uk/news/2015/03March/Pages/Loneliness-increases-risk-of-premature-death.aspx).  
-This app is a communication tool for sending meaningful messages in order to combat this rise in loneliness. The idea was inspired by apps like [YO](https://www.justyo.co/) and [Somebody To](http://somebodyapp.com/) and as an interruption to an overcrowded market of messaging apps full of noise and distraction. 
+["Loneliness is as big a killer as obesity and is as dangerous as heavy smoking"](http://www.nhs.uk/news/2015/03March/Pages/Loneliness-increases-risk-of-premature-death.aspx).  
+This app is a communication tool for sending meaningful messages in order to combat this dangerous rise in loneliness. The idea was inspired by apps like [YO](https://www.justyo.co/) and [Somebody To](http://somebodyapp.com/) and as an interruption to an overcrowded market of messaging apps full of noise and distraction. 
 
 Using a quotes API, Power generates random categories for the user to choose an inspirational message which they can personalise in an editor and send via SMS. 
 
@@ -56,7 +56,7 @@ Example SMS (with dubious message!) recieved on iPhone:
 
 ### Wins
 
-* Using MongoDB and JSON objects for debugging and Database admin was so much easier than ActiveRecord & Ruby On Rails! Things become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. 
+* Using MongoDB and JSON objects for debugging and Database admin was a pleasant change from ActiveRecord & Ruby On Rails! Things become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. 
 * Sucessfully integrating Twilio
 * Creating a clean, scrolling design using Angular and JQuery
 
