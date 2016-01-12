@@ -40,6 +40,20 @@ I had a firm design in mind for Power. It's all about meaning so I wanted the wo
 * Skeleton CSS
 * JQuery
 
+
+### Design Snapshot
+The landing page: 
+
+![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-splash.png)
+
+
+Example categories (these randomise):
+![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-categories.png)
+
+Example SMS on iphone: 
+![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/sms.png)
+
+
 ### Wins
 
 * Using MongoDB and JSON objects for debugging and Database admin was so much easier than ActiveRecord & Ruby On Rails! Things become a lot easier when the objects stored in your database are essentially identical to the objects your client Javascript sees. 
