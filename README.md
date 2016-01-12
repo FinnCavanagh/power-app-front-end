@@ -52,6 +52,6 @@ I had a firm design in mind for Power. It's all about meaning so I wanted the wo
 * I'm developing an inbox so you can see all your received and sent Powers
 * Ideally the messaging app would show contacts with a Power Status which would indicate what mood you were in. Users could then send messages which helped or corresponded with that mood.
 
-
+333
 
 
