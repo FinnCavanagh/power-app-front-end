@@ -49,9 +49,9 @@ The landing page:
 Example categories (these randomise):
 ![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-categories.png)
 
-Example SMS on iPhone: 
-*
-![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/sms.PNG)
+Example SMS (with dubious message!) recieved on iPhone: 
+
+![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-sms.PNG)
 
 
 ### Wins
