@@ -44,14 +44,13 @@ I had a firm design in mind for Power. It's all about meaning so I wanted the wo
 ### Design Snapshot
 The landing page: 
 
-![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-splash.png)
-
+![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-splash.jpg)
 
 Example categories (these randomise):
 ![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/power-categories.png)
 
-Example SMS on iphone: 
-![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/sms.png)
+Example SMS on iPhone: 
+![image](https://github.com/FinnCavanagh/power-app-front-end/blob/master/images/sms.PNG)
 
 
 ### Wins
